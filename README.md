@@ -10,9 +10,10 @@ Thanks to [GuaHsu](https://github.com/guahsu) for the [demos](http://guahsu.io/J
 
 ## Table Of Contents
 
-| order | Demo | Note |
-|-------|------|------|
-| 01    |      |      |
-|       |      |      |
-|       |      |      |
+| order | Subject | Demo | Note |
+|-------|---------|------|------|
+| 01    | https://github.com/Seplian/javascript30-practises/blob/main/01%20JavaScript%20Drum%20Kit/index.html | https://github.com/Seplian/javascript30-practises/tree/main/01%20JavaScript%20Drum%20Kit
+|
+|       |         |      |      |
+|       |         |      |      |
 
