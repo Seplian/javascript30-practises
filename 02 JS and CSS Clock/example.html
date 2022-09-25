@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript30 - 02 - JS and CSS Clock | Gua's Note</title>
+    <script src="ga.js"></script>
+</head>
+
+<body>
+  <canvas style="position: absolute; top: 30%; left: 30%; border: 1px solid red;"></canvas>
+
+  <script>
+const canvas = document.querySelector('canvas');
+const ctx = canvas.getContext('2d');
+
+const CANVAS_WIDTH = canvas.width = 400;
+const CANVAS_HEIGTH = canvas.height = 400;
+
+
+ctx.beginPath();
+ctx.ellipse(100, 100, 100, 30, 0, 1.5*Math.PI, 2.5*Math.PI);
+ctx.fill();
+
+ctx.rotate(0.5);
+ctx.beginPath();
+ctx.ellipse(100, 100, 100, 30, 0, 1.5*Math.PI, 2.5*Math.PI);
+ctx.fill();
+
+ctx.rotate(0.5);
+ctx.beginPath();
+ctx.ellipse(100, 100, 100, 30, 0, 1.5*Math.PI, 2.5*Math.PI);
+
+ctx.fill();
+
+  </script>
+</body>
+
+</html>

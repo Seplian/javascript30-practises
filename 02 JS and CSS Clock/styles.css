@@ -1,0 +1,102 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 85vh;
+	margin: 0;
+	padding: 0;
+	font-family: Tahoma;
+	font-size: 10px;
+	background: linear-gradient(0deg, rgba(50, 50, 50, 0.7), rgba(50, 50, 50, 0.7)), url("images/pexels-pixabay-33109.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+header {
+	width: 40%;
+	position: absolute;
+	top: 40%;
+	left: 0;
+	font-size: 3em;
+	background: yellow;
+	color: black;
+	text-align: center;
+
+	margin: 0;
+}
+
+header h1 {
+	margin: 0;
+}
+
+nav {
+	width: 40%;
+	font-size: 2em;
+	position: absolute;
+	top: 48%;
+	left: 0;
+	margin: 0;
+	padding: 0;
+}
+
+main {
+	font-size: 1.5em;
+}
+
+.navbar {
+
+	list-style: none;
+	width: 100%;
+	height: 30px;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: space-around;
+	background: rgba(0, 0, 0, 0.9);
+	color: white;
+}
+
+.navbar li {
+	box-sizing: border-box;
+	width: 50%;
+	text-align: center;
+}
+
+.navbar li:first-child {
+	border-right: 2px solid white;
+}
+
+.container {
+	position: absolute;
+	top: 20%;
+	right: 20%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+canvas {
+/*	border: 1px solid red;
+*/}
+
+.digitalClock {
+	width: 300px;
+	color: white;
+	text-align: center;
+	text-shadow: 1px 1px white;
+	line-height: 2em;
+	font-size: 3em;
+}
+
+
+
+
+
+
+
