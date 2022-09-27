@@ -1,0 +1,89 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	height: 90vh;
+	font-family: Tahoma;
+	font-size: 10px;
+	background: #414770;
+}
+
+header {
+	font-size: 3.5em;
+	color: white;
+	text-align: center;
+	margin-bottom: -30px;
+}
+
+nav {
+	width: 100%;
+	font-size: 2em;
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+}
+
+main {
+	font-size: 1.5em;
+}
+
+.navbar {
+	list-style: none;
+	width: 100%;
+	height: 30px;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: space-around;
+	background: rgba(0, 0, 0, 0.9);
+	color: white;
+}
+
+.navbar li {
+	box-sizing: border-box;
+	width: 50%;
+	text-align: center;
+}
+
+.navbar li:first-child {
+	border-right: 2px solid white;
+}
+
+.container {
+	display: grid;
+	justify-items: center;
+	grid-row-gap: 20px
+}
+
+.controls {
+	width: 90%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.control {
+	flex: 1 1 20%;
+	margin: 0 20px;
+}
+
+label {
+	display: inline-block;
+	width: 100%;
+	color: white;
+	font-size: 2em;
+	line-height: 2em;
+}
+
+input {
+	width: 100%;
+	height: 20px;
+}
+
+img {
+	width: 60%;
+	filter: blur(var(--my-blur, 0px)) grayscale(var(--my-grayscale, 0));
+	border: var(--my-spacing, 5px) solid var(--my-color, yellow);
+}

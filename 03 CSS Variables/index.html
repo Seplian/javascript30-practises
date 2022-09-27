@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CSS Variables</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js" defer></script>
+</head>
+
+<body>
+
+	<header>
+		<h1>CSS Variables</h1>
+	</header>
+
+	<nav>
+		<ul class="navbar">
+			<li>
+				<div><a href="../index.html">JavaScript 30 Pratises</a></div>
+			</li>
+			<li>
+				<div><a href="https://github.com/Seplian/javascript30-practises">Github page</a></div>
+			</li>
+		</ul>
+	</nav>
+
+	<main>
+		<div class="container">
+			<div class="controls">
+				<div class="control">
+					<label for="spacing">Spacing: </label>
+					<input type="range" id="spacing" value="5" min="5" max="100">
+				</div>
+				<div class="control">
+					<label for="blur">Blur: </label>
+					<input type="range" id="blur" value="0" min="0" max="20">
+				</div>
+				<div class="control">
+					<label for="grayscale">Grayscale: </label>
+					<input type="range" id="grayscale" value="0" min="0" max="100">
+				</div>
+				<div class="control">
+					<label for="baseColor">Base Color: </label>
+					<input type="color" id="baseColor" value="#FFFF00">
+				</div>
+			</div>
+			<img src="images/graffiti.jpg" alt="graffiti">
+		</div>
+	</main>
+
+</body>
+</html>
