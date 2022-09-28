@@ -80,7 +80,7 @@ The `input` event is fired every time the value of the element changes. This is 
 
 1. Instead of `input` event, Using two other event: `change` and `mousemove`, which seem to perform in similar way.
 
-2. Store the suffix(`px`, `%`) in the `data-*` attributes of `input` element, then the CSS varibles like `blur` and `border-width`, which value need measurement to be valid, can be assembled using template literals. This way is more brief and flexible:
+2. Store the suffix(`px`, `%`) in the `data-*` attributes of `input` element, then the CSS varibles like `blur` and `border-width`, which value need measurement to be valid, can be assembled using template literals. We can obtain the `data-*` attribute by `dataset.*` function, which is equal to `getAttribute()`. This way is more brief and flexible:
 ```
 function handleUpdate() {
     const suffix = this.dataset.sizing || '';
