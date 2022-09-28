@@ -14,7 +14,7 @@ Understand the various examples of each array method, with appropriate callback 
 
 ## CSS tricks
 
-Styleing a from if often arbitrary rather than following fixed criteria， but there are some general rules， See more: (Styling tables)[https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables]
+Styleing a from if often arbitrary rather than following fixed criteria， but there are some general rules， See more: [Styling tables](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables])
 
 ---
 
@@ -45,8 +45,8 @@ const reformattedArray = kvArray.map(({ key, value}) => ({ [key]: value }));
 ```
 2. ### `Array.prototype.filter()`
 
-The `filter()` method calls a provided `callbackFn` function once for each element in an array, and constructs a **new array** of all the values for which callbackFn returns a value that coerces to `true`((Type coercion
-)[https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion]). Array elements which do not pass the callbackFn test are skipped, and are not included in the new array.
+The `filter()` method calls a provided `callbackFn` function once for each element in an array, and constructs a **new array** of all the values for which callbackFn returns a value that coerces to `true`([Type coercion
+](https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion)). Array elements which do not pass the callbackFn test are skipped, and are not included in the new array.
 
 ```
 // Arrow function
@@ -66,7 +66,7 @@ function filterItems(arr, query) {
 
 3. ### `Array.prototype.sort()`
 
-The `sort()` method sorts the elements of an array (in place)[https://en.wikipedia.org/wiki/In-place_algorithm] and returns the reference to the **same array**, now sorted. The default sort order is ascending.
+The `sort()` method sorts the elements of an array [in place](https://en.wikipedia.org/wiki/In-place_algorithm) and returns the reference to the **same array**, now sorted. The default sort order is ascending.
 
 If `compareFn` is not supplied, all non-undefined array elements are sorted by converting them to strings and comparing strings in *UTF-16 code* units order. All `undefined` elements are sorted to the end of the array.
 
