@@ -45,8 +45,7 @@ const reformattedArray = kvArray.map(({ key, value}) => ({ [key]: value }));
 ```
 2. ### `Array.prototype.filter()`
 
-The `filter()` method calls a provided `callbackFn` function once for each element in an array, and constructs a **new array** of all the values for which callbackFn returns a value that coerces to `true`([Type coercion
-](https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion)). Array elements which do not pass the callbackFn test are skipped, and are not included in the new array.
+The `filter()` method calls a provided `callbackFn` function once for each element in an array, and constructs a **new array** of all the values for which callbackFn returns a value that coerces to `true`([Type coercion](https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion)). Array elements which do not pass the callbackFn test are skipped, and are not included in the new array.
 
 ```
 // Arrow function
@@ -159,6 +158,29 @@ myFunction(a, ...iterableObj, b)
 { ...obj, key: 'value' }
 ```
 
+#### Spread(`...`) in object literals
+
+Shallow-cloning (excluding prototype) or merging of objects is possible using a shorter syntax than [`[Object.assign()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign).
+
+```
+const obj1 = { foo: 'bar', x: 42 };
+const obj2 = { foo: 'baz', y: 13 };
+
+const clonedObj = { ...obj1 };
+// Object { foo: "bar", x: 42 }
+
+const mergedObj = { ...obj1, ...obj2 };
+// Object { foo: "baz", x: 42, y: 13 }
+
+const merge = (...objects) => ({ ...objects });
+const mergedObj2 = merge({}, obj1, obj2);
+// Object { 0: {}, 1: { foo: 'bar', x: 42 }, 2: { foo: 'baz', y: 13 } }
+
+const merge2 = (...objects) => objects.reduce((acc, cur) => ({ ...acc, ...cur }));
+const mergedObj1 = merge2(obj1, obj2);
+// Object { foo: 'baz', x: 42, y: 13 }
+
+```
 
 
 

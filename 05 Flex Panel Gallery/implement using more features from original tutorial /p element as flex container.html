@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>P element as flex container</title>
+	<style>
+		div {
+			height: 80vh;
+			font-size: 20px;
+			border: 1px solid red;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		p {
+			border: 1px solid blue;
+			background: black;
+			color: white;
+
+			width: 100%;
+			flex: 1 0 auto;
+
+			text-align: center;
+
+/*			display: flex;
+			justify-content: center;
+			align-items: center;
+*/
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<p>Lorem ipsum</p>
+		<p>Lorem ipsum</p>
+		<p>Lorem ipsum</p>
+	</div>
+
+</body>
+</html>
