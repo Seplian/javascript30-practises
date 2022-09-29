@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+	font-size: 10px;
+	font-family: Montserrat, Arial;
+}
+
+body {
+	min-height: 100vh;
+	background: rgba(244, 244, 244, 1.0);
+}
+
+.header {
+	width: 100%;
+	height: 8vh;
+	padding: 10px 5%;
+	background: #3A3335;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.title {
+	font-size: 4em;
+	color: orange;
+}
+
+.navbar {
+	font-size: 1.8em;
+}
+
+.navbar ul {
+	list-style: none;
+	display: flex;
+	justify-content: space-around;
+}
+
+.navbar li {
+	width: 250px;
+	text-align: center;
+	margin: 0;
+}
+
+.navbar a {
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+	transition: all 0.45s ease-out;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+	color: #EB5E55;
+	border-bottom: 2px solid #EB5E55;
+	transition: all 0.45s ease-out;
+	outline: none;
+}
+
+.navbar a:active {
+	color: #D81E5B;
+	border-bottom: none;
+}
+
+main {
+	min-height: 100vh;
+	display: flex;
+	overflow: hidden;
+
+}
+
+.panel {
+	position: relative;
+	box-shadow: 0 0 1px 1px white;
+
+	font-size: 3em;
+	flex-grow: 1;
+	transition:
+		font-size 0.5s cubic-bezier(.86,-0.81,.53,.77),
+		flex 0.5s cubic-bezier(.86,-0.81,.53,.77);
+
+	background-position: center;
+	background-size: cover;
+}
+
+.panel.active {
+	flex-grow: 2.5;
+	font-size: 6em;
+	transition: all 0.5s cubic-bezier(.86,-0.81,.53,.77);
+}
+
+.panel p {
+	width: 100%;
+	text-align: center;
+	text-shadow: 0 0 3px gray, 0 0 10px rgba(0, 0, 0, 0.5);
+	color: white;
+
+	position: absolute;
+	z-index: 1;
+
+	transition: all 0.5s ease-out 0.2s;
+
+}
+
+.panel::after {
+	width: 100%;
+	height: 33%;
+	content: '';
+	background-color: rgba(0, 0, 0, 0.5);
+
+	position: absolute;
+	top: 25%;
+	left: 0;
+
+	transition: all 0.4s ease-out 0.2s;
+}
+
+.panel.active:after {
+	height: 100%;
+	top: 0;
+}
+
+.panel:nth-child(1) { background-image: url('images/alona-perez-p4xNF5ZPc0c-unsplash.jpg'); }
+.panel:nth-child(2) { background-image: url('images/hubert-neufeld-TWe4tUsLot8-unsplash.jpg'); }
+.panel:nth-child(3) { background-image: url('images/ivana-cajina-3YzjvxD_7ig-unsplash.jpg'); }
+.panel:nth-child(4) { background-image: url('images/joel-fulgencio-6g9BxgCNQv4-unsplash.jpg'); }
+.panel:nth-child(5) { background-image: url('images/yu-kato-dNWGjvrG0QA-unsplash.jpg'); }
+
+.panel p:nth-child(1) { top: -10%; }
+.panel.active p:nth-child(1) { top: 10%; }
+.panel p:nth-child(2) { top: 40%; }
+.panel p:nth-child(3) { top: 110%; }
+.panel.active p:nth-child(3) { top: 70%; }
+
+
+
+
+
+
+
+
