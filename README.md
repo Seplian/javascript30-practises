@@ -19,5 +19,9 @@ Thanks to [GuaHsu](https://github.com/guahsu) for the [demos](http://guahsu.io/J
 | 03    | CSS Variables | [demo](https://seplian.github.io/javascript30-practises/03%20CSS%20Variables/index.html) | [note](https://github.com/Seplian/javascript30-practises/tree/main/03%20CSS%20Variables) |
 | 04    | Array Cardio Day 1 | [demo](https://seplian.github.io/javascript30-practises/04%20Array%20Cardio%20Day%201/index.html) | [note](https://github.com/Seplian/javascript30-practises/tree/main/04%20Array%20Cardio%20Day%201) |
 | 05    | Flex Panel Gallery | [demo](https://seplian.github.io/javascript30-practises/05%20Flex%20Panel%20Gallery/index.html) | [note](https://github.com/Seplian/javascript30-practises/tree/main/05%20Flex%20Panel%20Gallery) |
+| 06    | Type Ahead | [demo](https://seplian.github.io/javascript30-practises/06%20Type%20Ahead/index.html) | [note](https://github.com/Seplian/javascript30-practises/tree/main/06%20Type%20Ahead) |
+
+
+
 
 

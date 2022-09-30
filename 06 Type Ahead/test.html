@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		html{
+			font-size: 40px;
+			background: orange;
+		}
+
+		li:nth-child(even) {
+			transform: perspective(100px) rotateX(3deg) translateY(2px) scale(1.001);
+			background: linear-gradient(to bottom,  #ffffff 0%,#EFEFEF 100%);
+		}
+
+		li:nth-child(odd) {
+			transform: perspective(100px) rotateX(-3deg) translateY(3px);
+			background: linear-gradient(to top,  #ffffff 0%,#EFEFEF 100%);
+		}
+
+	</style>
+</head>
+<body>
+
+	<div>
+		<ul>
+
+			<li>Valley Stream<span>,    </span><span class="match">New</span> York<span class="population">37659</span></li>
+
+			<li><span>| York |</span></li>
+
+			<li> York is in <span class="match">New</span><span class="match">New</span> York<span class="population">8405837</span></li>
+
+			<li><span class="match">New</span> York, <span class="match">New</span> York<span class="population">8405837</span></li>
+
+			<li><span class="name"><span class="hl">New</span> Bedford, Massachusetts</span>
+        <span class="population">95,078</span></li>
+
+		</ul>
+		<p>Valley          Stream<span>,    </span><span class="match">New</span> York<span class="population">37659</span></p>
+	</div>
+	<script>
+		const li = document.querySelector('li');
+		const liContentCity = 'New York';
+		const liContentState = 'New York';
+
+		li.innerHTML = `${liContentCity}, ${liContentState}`;
+	</script>
+</body>
+</html>
