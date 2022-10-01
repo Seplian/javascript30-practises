@@ -101,7 +101,7 @@ or
 Math.floor( Math.random() * (max - min + 1) ) + min;
 ```
 
-### pick a random element from array
+#### pick a random element from array
 
 ```
 Array[Math.floor((Math.random()*Array.length))]
@@ -199,7 +199,7 @@ const evs = [
 evs.forEach(({e, h}) => { myCanvas.addEventListener(e, h); });
 ```
 
-Note: an implement for Nitish
+Note: an implement form Nitish
 
 
 
