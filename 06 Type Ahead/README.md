@@ -117,6 +117,12 @@ Set the distance between the user and the z=0 plane. Because the upper border of
 
 ### JS
 
+#### `Array.prototype.join()`
+
+For the step of displaying recommended search results with a list, my approach is to use `createElement('li')` to create a \<li\> element, modify its `innerHTML` content, and append to the \<ul\> parent element.
+
+In the tutorial, directly use template literals to assemble a \<li\> element and all its contents. Then, call the `join()` method to get a ultra long string and write it into the `innerHTML` of the \<ul\> parent element, which skips the step of resetting \<ul\> content.
+
 #### Adding Commas(,) to a Number every three digits with Lookaround
 
 ```
