@@ -22,6 +22,9 @@ Thanks to [GuaHsu](https://github.com/guahsu) for the [demos](http://guahsu.io/J
 | 06    | Type Ahead | [demo](https://seplian.github.io/javascript30-practises/06%20Type%20Ahead/index.html) | [note](https://github.com/Seplian/javascript30-practises/tree/main/06%20Type%20Ahead) |
 | 07    | Array Cardio Day 2 | [demo](https://seplian.github.io/javascript30-practises/07%20Array%20Cardio%20Day%202/index.html) | [note](https://github.com/Seplian/javascript30-practises/tree/main/07%20Array%20Cardio%20Day%202) |
 | 08    | Fun with HTML5 Canvas | [demo](https://seplian.github.io/javascript30-practises/08%20Fun%20with%20HTML5%20Canvas/index.html) | [note](https://github.com/Seplian/javascript30-practises/tree/main/08%20Fun%20with%20HTML5%20Canvas) |
+| 09    | Dev Tools Domination | [demo](https://seplian.github.io/javascript30-practises/09%20Dev%20Tools%20Domination/index.html) | [note](https://github.com/Seplian/javascript30-practises/tree/main/09%20Dev%20Tools%20Domination) |
+
+
 
 
 
