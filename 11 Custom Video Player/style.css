@@ -1,0 +1,249 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap');*/
+
+@font-face {
+    font-family: 'Material Icons';
+    src: url('fonts/MaterialIcons-Regular.woff2') format('woff2'),
+        url('fonts/MaterialIcons-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+	font-size: 10px;
+	font-weight: 400;
+	font-family: Montserrat, Arial;
+}
+
+body {
+	min-height: 100vh;
+	background: rgba(244, 244, 244, 1.0);
+	background: #3A3335;
+}
+
+.header {
+	width: 100%;
+	height: 8vh;
+	padding: 10px 5%;
+	background: #3A3335;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 0.5px solid white;
+}
+
+.title {
+	font-size: 4em;
+	color: orange;
+}
+
+.navbar {
+	font-size: 1.8em;
+}
+
+.navbar ul {
+	list-style: none;
+	display: flex;
+	justify-content: space-around;
+}
+
+.navbar li {
+	width: 250px;
+	text-align: center;
+	margin: 0;
+}
+
+.navbar a {
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+	transition: all 0.45s ease-out;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+	color: #EB5E55;
+	border-bottom: 2px solid #EB5E55;
+	transition: all 0.45s ease-out;
+	outline: none;
+}
+
+.navbar a:active {
+	color: #D81E5B;
+	border-bottom: none;
+}
+
+.main {
+	margin: 70px auto;
+	display: flex;
+	justify-content: center;
+	flex: 1 0 auto;
+}
+
+.player {
+	position: relative;
+	overflow: hidden;
+}
+
+.player:fullscreen {
+  max-width: none;
+  width: 100%;
+}
+
+
+.player .controls {
+/*	display: none;*/
+	width: 100%;
+/*	height: 5px;*/
+	transform: translateY(100%) translateY(-3px);
+/*	overflow: hidden;*/
+	position: absolute;
+	bottom: 0;
+	transition: all 0.3s;
+}
+
+.player.hover .controls {
+	transform: translateY(-5px);
+/*	display: flex;*/
+/*	height: 50px;*/
+/*	overflow: visible;*/
+/*	bottom: 5px;*/
+}
+
+/*.player.hover.overflowVisible .controls {
+	overflow: visible;
+}*/
+
+.controls {
+	display: flex;
+	flex-flow: wrap;
+	justify-content: space-between;
+	color: white;
+}
+
+.progress {
+/*	border: 1px solid red;*/
+	height: 10px;
+	width: 100%;
+}
+
+.progress_bar {
+	width: 100%;
+	height: 100%;
+/*	background-color: rgba(100, 100, 100, 0.75);*/
+	background: linear-gradient(to right, red 0% var(--my-progress, 0%), rgba(100, 100, 100, 0.75) var(--my-progress, 0%) 100%);
+	position: relative;
+}
+
+.left_controls {
+/*	border: 1px solid red;*/
+	width: 50%;
+	margin-left: 10px;
+	padding: 5px 0;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.right_controls {
+/*	border: 1px solid red;*/
+	width: 30%;
+	margin-right: 10px;
+	padding: 5px 0;
+	display: flex;
+	justify-content: flex-end;
+
+/*	position: relative;*/
+}
+
+button {
+	background: none;
+	color: white;
+	border: none;
+	margin: 2px 5px;
+	display: flex;
+	justify-content: center;
+}
+
+input[type="range"] {
+	display: none;
+	transform: rotateZ(270deg);
+	width: 100px;
+	height: 10px;
+}
+
+.speed, .volume {
+	position: relative;
+}
+
+.volume_container {
+	position: relative;
+}
+
+.speed.hover::before,
+.volume.hover::before {
+	display: block;
+	position: absolute;
+	bottom: 0;
+	content: "";
+	width: 20px;
+	height: 160px;
+/*	border: 1px solid red;*/
+}
+
+.speed.hover input[type="range"] {
+	display: block;
+	position: absolute;
+	bottom: 14vh;
+}
+
+.volume.hover + input[type="range"] {
+	display: block;
+	position: absolute;
+	right: -35px;
+	bottom: 14vh;
+}
+
+.timer {
+	margin: 0 20px;
+	font-size: 1.2em;
+}
+
+
+
+
+
+

@@ -24,6 +24,7 @@ Thanks to [GuaHsu](https://github.com/guahsu) for the [demos](http://guahsu.io/J
 | 08    | Fun with HTML5 Canvas | [demo](https://seplian.github.io/javascript30-practises/08%20Fun%20with%20HTML5%20Canvas/index.html) | [note](https://github.com/Seplian/javascript30-practises/tree/main/08%20Fun%20with%20HTML5%20Canvas) |
 | 09    | Dev Tools Domination | [demo](https://seplian.github.io/javascript30-practises/09%20Dev%20Tools%20Domination/index.html) | [note](https://github.com/Seplian/javascript30-practises/tree/main/09%20Dev%20Tools%20Domination) |
 | 10    | Hold Shift and Check Checkboxes | [demo](https://seplian.github.io/javascript30-practises/10%20Hold%20Shift%20and%20Check%20Checkboxes/index.html) | [note](https://github.com/Seplian/javascript30-practises/tree/main/10%20Hold%20Shift%20and%20Check%20Checkboxes) |
+| 11    | Custom Video Player | [demo](https://seplian.github.io/javascript30-practises/11%20Custom%20Video%20Player/index.html) | [note](https://github.com/Seplian/javascript30-practises/tree/main/11%20Custom%20Video%20Player) |
 
 
 

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>06 Type Ahead</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js" defer></script>
+</head>
+
+<body>
+
+	<div class="header">
+		<div class="title">Type Ahead</div>
+		<div class="navbar">
+			<ul>
+				<li><a href="../index.html">JavaScript 30 Pratises</a></li>
+				<li><a href="https://github.com/Seplian/javascript30-practises">Github page</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="player">
+			<video class="" src="videos/652333414.mp4"></video>
+
+			<div class="controls">
+				<div class="progress">
+					<div class="progress_bar"></div>
+				</div>
+
+				<div class="left_controls">
+					<button data-skip="-10" class="rewind">
+						<span class="material-icons">fast_rewind</span>
+					</button>
+					<button class="play_button">
+						<span class="material-icons">play_arrow</span>
+					</button>
+					<button data-skip="25" class="forward">
+						<span class="material-icons">fast_forward</span>
+					</button>
+					<span class="timer">00:00:00 / 00:00:00</span>
+				</div>
+
+				<div class="right_controls">
+
+					<button class="speed">
+						<span class="material-icons">speed</span>
+						<input type="range" name="playbackRate" class="rate_slider" min="0.5" max="2" step="0.1" value="1">
+					</button>
+
+					<div class="volume_container">
+					<button class="volume">
+						<span class="material-icons">volume_up</span>
+					</button>
+					<input type="range" name="volume" class="volume_slider" min="0" max="1" step="0.05" value="1">
+					</div>
+
+					<button class="fullscreen" data-fullscreen="fullscreen" data-fullscreen_exit="fullscreen_exit">
+						<span class="material-icons">fullscreen</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
