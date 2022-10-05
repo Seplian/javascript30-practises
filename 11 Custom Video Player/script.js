@@ -15,22 +15,16 @@ player.addEventListener('mouseleave', () => {
 // click to play or pause the video, also change the play_button icon
 
 const play_button = document.querySelector('.play_button');
-play_button.addEventListener('click', (e) => {
-	play_Or_Pause();
-})
-video.addEventListener('click', () => {
-	play_Or_Pause();
-})
+play_button.addEventListener('click', play_Or_Pause);
+video.addEventListener('click', play_Or_Pause);
 function play_Or_Pause() {
 	const method = video.paused ? 'play' : 'pause';
-	const play_button_span = play_button.querySelector('span');
-	play_button_span.textContent = !video.paused ? 'play_arrow' : 'pause'
+	play_button.querySelector('span').textContent = !video.paused ? 'play_arrow' : 'pause'
 	video[method]();
 }
 video.addEventListener('ended', () => {
 	video.pause();
-	const play_button_span = play_button.querySelector('span');
-	play_button_span.textContent = 'replay';
+	play_button.querySelector('span').textContent = 'replay';
 })
 
 
@@ -53,14 +47,12 @@ forward.addEventListener('click', () => {
 
 const progress = document.querySelector('.progress')
 video.addEventListener('timeupdate', () => {
-	const progress_bar = document.querySelector('.progress_bar');
-	progress_bar.style.setProperty('--my-progress', `${video.currentTime / video.duration * 100}%`);
+	progress.style.setProperty('--my-progress', `${video.currentTime / video.duration * 100}%`);
 });
 // click to jump
 progress.addEventListener('click', (e) => {
-	const progress_bar = document.querySelector('.progress_bar');
-	const radio = e.offsetX / progress_bar.offsetWidth;
-	video.currentTime = radio * video.duration;
+	const ratio = e.offsetX / progress.offsetWidth;
+	video.currentTime = ratio * video.duration;
 });
 // drag to jump
 let isJump;
@@ -69,9 +61,8 @@ progress.addEventListener('mousedown', () => {
 });
 window.addEventListener('mousemove', (e) => {
 	if(isJump) {
-		const progress_bar = document.querySelector('.progress_bar');
-		const radio = e.offsetX / progress_bar.offsetWidth;
-		video.currentTime = radio * video.duration;
+		const ratio = e.offsetX / progress.offsetWidth;
+		video.currentTime = ratio * video.duration;
 	}
 });
 window.addEventListener('mouseup', () => {

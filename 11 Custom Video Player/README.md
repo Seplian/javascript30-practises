@@ -1,4 +1,4 @@
-# Note 06: Type Ahead
+# Note 11: Custom Video Player
 
 ## Subject
 
@@ -34,37 +34,137 @@ Custom a video controls, including fast rewind, fast forward 10 seconds, play, p
 
 ## CSS tricks
 
-### `transform: skew()`
+### Google Material Icons / Material Symbols
 
-In order to build an isosceles trapezoidal li element border, I have imagined a variety of methods, I believe the most reliable method is to use the trasform function to deform, but after testing many approaches are not very well.
+It's more difficult to handle icons as images. Whether adjusting the color or determining the position, may encounter unexpected situations. So if you want to have a simple icon as the content of the button to indicate the user, a better choice is to use a font similar to the icon.
 
-Finally I applied a relatively complex method, adding a ::before pseudo element to the left of the li element, making it 0 wide and the same height as the li element, with a large border thickness, and using the transform: skew() method to stretch the upper left corner to the left; the right side is the same, except this time it is an after pseudo element and stretched to the right.
+I searched for some related fonts and found one that works well: Google Material Icons / Material Symbols.
 
-**Note**: use `position: absolute` to adjust the position and set the `z-index` of a negative value to prevent obscuring the \<li\> element itself.
+[Material Design icons Github repository](https://github.com/google/material-design-icons)
 
-### 进度条用linegradint
+[Material Icons Guide](https://developers.google.com/fonts/docs/material_icons?hl=en)
 
-Use `odd` and `even` parameters to alternately select elements to create alternating CSS effects.
+[Material Icons Library](https://fonts.google.com/icons/)
 
-### `justify-content: space-between`
+All icons are packed in one font file, just import it with `@font-face` and add a small snippet of CSS rules to rendering. You can also simply import the official external CSS file.
 
-Distribute items evenly. The first item is flush with the start, the last is flush with the end.
+It is quite convenience to render an icon glyph by using its textual name.
 
-In our implementation, we use this property to make the textual content (city and state) and the numerical content (population) of the search results, separated on both sides of the list.
+```
+<span class="material-icons">face</span>
+```
+
+### `overflow: hidden;`
+
+Content is clipped if necessary to fit the padding box.
+
+This CSS property is more useful than I thought. `display: none` directly turns of the element and its descendants; `visibility: hidden` can set different values for every descendants, but it is only a visual effect.
+
+`overflow: hidden` is very flexible and can be partially or fully obscured or unobscured with the position property which is very easy to control with JavaScript code, and it is also convenience to make `transition` animation.
+
+### `linear-gradient()`
+
+Previously, I have used two \<div\> elements to create a progress bar, and the video progress ratio corresponds to the width of the child element.
+
+This time I choose to use only one element to implement the progress by using two colors of linear-gradient background, and adjust the position ratio of the two colors through CSS custom properties to reflect to the playing progress ratio.
+
+```
+// CSS
+background: linear-gradient(to right, red 0% var(--my-progress, 0%), rgba(100, 100, 100, 0.75) var(--my-progress, 0%) 100%);
+// JavaScript
+progress.style.setProperty('--my-progress', `${video.currentTime / video.duration * 100}%`);
+```
 
 ---
 
 ## JS recap
 
-### `HTMLMediaElement.paused`
+### The `HTMLMediaElement` interface
+
+#### `HTMLMediaElement.paused`
 
 Returns a boolean that indicates whether the media element is paused.
 
+#### HTMLMediaElement: `ended` event
+
+The `ended` event is fired when playback or streaming has stopped because the end of the media was reached or because no further data is available.
+
+#### `HTMLMediaElement.currentTime`
+
+The HTMLMediaElement interface's `currentTime` property specifies the current playback time in seconds.
+
+Changing the value of `currentTime` seeks the media to the new time.
+
+#### `HTMLMediaElement.duration`
+
+The read-only HTMLMediaElement property `duration` indicates the length of the element's media in seconds.
+
+**Note**: This property may not be read correctly if the video is not yet loaded or if streaming video is used.
+
+#### `HTMLMediaElement.muted`
+
+indicates whether the media element muted.
+
+#### `HTMLMediaElement.volume`
+
+The `HTMLMediaElement.volume` property sets the volume at which the media will be played.
+
+#### `HTMLMediaElement.playbackRate`
+
+The HTMLMediaElement.playbackRate property sets the rate at which the media is being played back.
+
+#### HTMLMediaElement: `timeupdate` event
+
+The `timeupdate event` is fired when the time indicated by the `currentTime` attribute has been updated.
+
+The event frequency is dependent on the system load, but will be thrown between about 4Hz and 66Hz (assuming the event handlers don't take longer than 250ms to run).
+
+#### HTMLMediaElement: `loadeddata` event
+
+The `loadeddata` event is fired when the frame at the current playback position of the media has finished loading; often the first frame.
+
+#### `element.requestFullscreen()`
+
+```
+const elem = document.getElementById("myvideo");
+
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
+```
 
 
-大量使用 a = !a和 b = c ? d : e来简化代码很不错。
+### Position and size read-only property
 
+#### `HTMLElement.offsetWidth`
 
+read-only property returns the layout width of an element as an integer.
+
+#### `MouseEvent.offsetX`
+
+read-only property of the MouseEvent interface provides the offset in the X coordinate of the mouse pointer between that event and the padding edge of the target node.
+
+#### `MouseEvent.clientX`
+
+read-only property of the MouseEvent interface provides the horizontal coordinate within the application's viewport at which the event occurred (as opposed to the coordinate within the page).
+
+### `String.prototype.padStart()`
+
+The `padStart()` method pads the current string with another string (multiple times, if needed) until the resulting string reaches the given length. The padding is applied from the start of the current string.
+
+```
+padStart(targetLength, padString)
+```
+
+### Simplify: Conditional (ternary) operator and Logical NOT
+
+Following the example of the previous tutorials, this time I introduced a bit of them to simplify the code and it did work well.
 
 ---
 
@@ -72,21 +172,21 @@ Returns a boolean that indicates whether the media element is paused.
 
 ### CSS
 
-####  Create trapezoidal border elements using the `transform` function
+####  `transform` function
 
-`transform: rotateX(3deg)`
+##### `transform: translateY()`
 
-Rotates an element around the abscissa (horizontal axis) without deforming it. In this example, it is equivalent to rotating around the x-axis to bring the upper border of the element closer to us.
+The `translateY()` CSS function repositions an element vertically on the 2D plane.
 
-`transform: perspective(100px)`
-
-Set the distance between the user and the z=0 plane. Because the upper border of the element is closer to us in the previous step, when increasing the value of this property, the upper border expands more and looks as if it is stretched.
+\<transform-function\> is really useful for adjusting the details of different positions and sizes, especially with `translation` to create hover animation effect. I am applying absolute position to create a pop-up display effect with `overflow: hidden`, but the tutorial with `translate` seems more concise and less likely to cause problems.
 
 ### JS
 
-#### `Array.prototype.join()`
+#### `video\[method\]()`
 
-video[method]();
+I think it's a very clever usage, video is obviously an JavaScript object, so its methods and properties can be accessed by dot or by square brackets, the advantage of the latter is that you can put strings, numbers, and variables inside the brackets
 
-video显然是个对象嘛，那它的方法用dot和用[]写都行呀，不要忘记[]最大的又是就是里边可以放变量
+
+
+
 
