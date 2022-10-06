@@ -1,4 +1,6 @@
-# JavaScript30 Challenge - 30 Lightweight Project Practices Built with Vanilla JavaScript
+# JavaScript30 Challenge
+
+## 30 Lightweight Project Practices Built with Vanilla JavaScript
 
 This is a record of my completion of the javascript30 challenge, including all the codes and notes. I'm the type of learner who has to do everything by myself (with the aid of Google, Stack Overflow and documentation, this doesn't count as "other people" 😁), so I chose the strategy of taking a look at exactly what other people have done with their demos, and then building it all from scratch. So the code here may be very different from the original tutorial, and it will take testing to see which method is better, but that's my own approach.
 
@@ -25,8 +27,7 @@ Thanks to [GuaHsu](https://github.com/guahsu) for the [demos](http://guahsu.io/J
 | 09    | Dev Tools Domination | [demo](https://seplian.github.io/javascript30-practises/09%20Dev%20Tools%20Domination/index.html) | [note](https://github.com/Seplian/javascript30-practises/tree/main/09%20Dev%20Tools%20Domination) |
 | 10    | Hold Shift and Check Checkboxes | [demo](https://seplian.github.io/javascript30-practises/10%20Hold%20Shift%20and%20Check%20Checkboxes/index.html) | [note](https://github.com/Seplian/javascript30-practises/tree/main/10%20Hold%20Shift%20and%20Check%20Checkboxes) |
 | 11    | Custom Video Player | [demo](https://seplian.github.io/javascript30-practises/11%20Custom%20Video%20Player/index.html) | [note](https://github.com/Seplian/javascript30-practises/tree/main/11%20Custom%20Video%20Player) |
-
-
+| 12    | Key Sequence Detection | [demo](https://seplian.github.io/javascript30-practises/12%20Key%20Sequence%20Detection/index.html) | [note](https://github.com/Seplian/javascript30-practises/tree/main/12%20Key%20Sequence%20Detection) |
 
 
 

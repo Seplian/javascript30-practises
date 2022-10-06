@@ -1,0 +1,122 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap');*/
+
+@font-face {
+    font-family: 'Material Icons';
+    src: url('fonts/MaterialIcons-Regular.woff2') format('woff2'),
+        url('fonts/MaterialIcons-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+	font-size: 10px;
+	font-weight: 400;
+	font-family: Montserrat, Arial;
+}
+
+body {
+	min-height: 100vh;
+	background: rgba(244, 244, 244, 1.0);
+	background: #3A3335;
+}
+
+.header {
+	width: 100%;
+	padding: 10px 5%;
+	background: #3A3335;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 0.5px solid white;
+}
+
+.title {
+	font-size: 4em;
+	color: orange;
+}
+
+.navbar {
+	font-size: 1.8em;
+}
+
+.navbar ul {
+	list-style: none;
+	display: flex;
+	justify-content: space-around;
+}
+
+.navbar li {
+	width: 250px;
+	text-align: center;
+	margin: 0;
+}
+
+.navbar a {
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+	transition: all 0.45s ease-out;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+	color: #EB5E55;
+	border-bottom: 2px solid #EB5E55;
+	transition: all 0.45s ease-out;
+	outline: none;
+}
+
+.navbar a:active {
+	color: #D81E5B;
+	border-bottom: none;
+}
+
+.main {
+	margin: 70px auto;
+	display: flex;
+	justify-content: center;
+	flex: 1 0 auto;
+}
+
+.main p,
+.main span {
+	font-size: 3em;
+	color: white;
+}
+
+
+
