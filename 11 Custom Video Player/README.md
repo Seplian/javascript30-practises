@@ -20,15 +20,31 @@ Custom a video controls, including fast rewind, fast forward 10 seconds, play, p
 
 ## Issues
 
-### `Array.sort()` applying on numbers
+### Hover evoked controls
 
-一开始用display: none来切换controls的显示，但是这样无法单独显示一个窄窄的进度条；所以后来换成了overflow: hidden，搭配改变controls的高度来控制显示。这个方案的问题是，超过高度的两个range也显示不出来了，我选择在play.hover时增加一个overflow: visible参数，这样就解决问题了；新问题是，添加transition效果，会先在视频的框外显示，然后向上移动，很不自然；最后搞了个复杂的解决方法，在鼠标移动让隐藏的两个控制条显示是，再为player添加一个额外类，改变它的overflow属性，移开鼠标就删掉额外类。虽然觉得有点繁琐，但问题是解决了。
+Initially, `display: none` was used to toggle the display of controls, but this resulted in that is is  impossible to display a narrow progress bar under the video alone in a non-hover state; so it was later switched to `overflow: hidden`, which toggles the display by changing the height of the controls. The problem with this approach was that the two range bars (playback speed and volume) that overflow the height of controls were also not displayed.
 
-原来原教程的方法是把overflow: hidden给player，而非controls，用transformY控制hover前后controls的Y轴位置。这样因为弹出的速度框和声音框是向上的，所以不用考虑hidden的问题，也就没必要为player添加新的类了。确实更好。
+After that, I chose to add an `overflow: visible` rule to the hover state, which solved the problem. The new issue is that when I create a `transition` effect for controls, it will first show outside the video box and then move up, which is very strange.
 
-横向展开放在右边的按钮感觉有点不合理，因为会把图标往左边顶，所以选择向上展开的速度和音量条。点击展开昂巨额有点累赘，因此使用了hover展开，这会产生一个问题，因为条是悬空在图标上边一定距离的，鼠标离开图标去条的过程中，会取消hover状态，因此条就关闭了。我的方法是在图标上放一个透明的before，让它连接图标和条。目前效果不错，但有两个小问题：1.条还是有点窄，鼠标扫过去可能漏导致它消失，我只能尽量把它弄宽一点；2.后边设置了点击声音图标会静音，导致点击看不见的before和条都会静音。。。所以我在外边又套了一个div container，鼠标离开它才会让条消失，然后让before整个包住条。最终效果还不错。
+Finally I made a complicated solution: when hovering the controls, don't apply the `overflow: visible` rule; until the mouse moves to show the two hidden range bar, I give the player an extra class to change its `overflow` property to `visible`, and delete the extra class when the mouse leaves away. It's a bit tedious, but the issue is fixed.
 
-进入全屏以后，会自动调用浏览器内置的一套controls，尴尬的是，因为我们自己也设置了一次点击player会播放/暂停的控制，所以点击一次会触发两次，等于没法暂停了。。。我发现原版和guahua都是的。。。
+After the project was finished, I took a look at the original tutorial's approach: it was to set `overflow: hidden` rule to player, not controls, and use `transformY()` to handle the Y-axis position of controls. This way, since the speed and volume bars pop upwards, they won't be hidden for too long when popping up, and there's no need to add a new class to the player. It is indeed better.
+
+### Hover evoked range bars
+
+The speed and volume adjustment buttons are placed to the right of the controls, so it is a bit unreasonable to expand them horizontally, which will push the icon to the left, so we choose to expand the speed and volume bars upwards.
+
+Clicking to expand the operation is a bit tedious, so I chose to use hover to expand it, which creates a problem: because the bar is hovering above the icon by some distance, the bar will close in the process of mouse leaving the icon to the bar because the hover state cancels.
+
+My method is to put a transparent `::before` pseudo element above the icon, and let it connect the icon and the bar. So far it works well, but there are two small problems:
+
+- the bar is a little narrow, the mouse may leave it to make it disappear during the mouse movement. I can only try to make it more wider.
+
+- after adding the function that clicking on the sound icon will mute the video, clicking on the invisible `::before` pseudo element and range bar will also mute the video. So I put a `div` container outside, took the range bar out of the button to become a sibling ralationship, let the `::before` pseudo element wrapped around the range bar, therefore the range bar would not disappear until mouse left the container.
+
+### Built-in full-screen controls
+
+After entering fullscreen, it will automatically call the browser's built-in controls, which will produce a bug: because we also made the controls for play/pause by clicking on the player, so one click will actually trigger twice, which means it can't be paused. I don't know if we can make our own fullscreen controls, I have not thought of a good solution yet.
 
 ---
 
@@ -186,6 +202,11 @@ The `translateY()` CSS function repositions an element vertically on the 2D plan
 
 I think it's a very clever usage, video is obviously an JavaScript object, so its methods and properties can be accessed by dot or by square brackets, the advantage of the latter is that you can put strings, numbers, and variables inside the brackets
 
+---
+
+## More
+
+The [completion of Nitish](https://github.com/nitishdayal/JavaScript30/tree/master/exercises/11%20-%20Custom%20Video%20Player) is very concise and uniform, with a high level of abstraction that is worth considering.
 
 
 
