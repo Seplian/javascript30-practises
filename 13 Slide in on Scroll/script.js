@@ -17,12 +17,15 @@ const image = document.querySelectorAll('.slide-in');
 
 function slide() {
     image.forEach(ele => {
-            if(ele.getBoundingClientRect().top < window.innerHeight - 0.5 * ele.height && ele.getBoundingClientRect().top > - ele.height) {
-                ele.classList.add('active');
-            }
-            if(ele.getBoundingClientRect().top > window.innerHeight - 0.5 * ele.height || ele.getBoundingClientRect().top < - ele.height) {
-                ele.classList.remove('active');
-            }
+
+        // Viewport to the top of the image < Viewport height - 20% height of the image, i.e. 20% of the image is already in the viewport
+
+        // Viewport to the top of the image > - 80% height of the image, i.e. 80% of the image is still in the viewport
+
+        let alreadyIn = ele.getBoundingClientRect().top < window.innerHeight - 0.2 * ele.height;
+        let notYetLeft = ele.getBoundingClientRect().top > - 0.8 * ele.height;
+
+        (alreadyIn && notYetLeft) ? ele.classList.add('active') : ele.classList.remove('active');
     });
 }
 
