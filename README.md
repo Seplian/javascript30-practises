@@ -29,6 +29,8 @@ Thanks to [GuaHsu](https://github.com/guahsu) for the [demos](http://guahsu.io/J
 | 11    | Custom Video Player | [demo](https://seplian.github.io/javascript30-practises/11%20Custom%20Video%20Player/index.html) | [note](https://github.com/Seplian/javascript30-practises/tree/main/11%20Custom%20Video%20Player) |
 | 12    | Key Sequence Detection | [demo](https://seplian.github.io/javascript30-practises/12%20Key%20Sequence%20Detection/index.html) | [note](https://github.com/Seplian/javascript30-practises/tree/main/12%20Key%20Sequence%20Detection) |
 | 13    | Slide in on Scroll | [demo](https://seplian.github.io/javascript30-practises/13%20Slide%20in%20on%20Scroll/index.html) | [note](https://github.com/Seplian/javascript30-practises/tree/main/13%20Slide%20in%20on%20Scroll) |
+| 14    | JavaScript References vs. Copying | [demo](https://seplian.github.io/javascript30-practises/14%20JavaScript%20References%20vs.%20Copying/index.html) | [note](https://github.com/Seplian/javascript30-practises/tree/main/14%20JavaScript%20References%20vs.%20Copying) |
+
 
 
 
